@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
           <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
-              How can I use it right?
+              How can I Fuse it right?
             </label>
             <h1>
               It's really simple. First you have to create an account. Second
