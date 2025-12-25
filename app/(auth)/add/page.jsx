@@ -3,7 +3,7 @@ export default function AddTrack() {
   const month = now.getMonth();
   const date = now.getDate();
   const day = now.getDay();
-  const dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
+  const dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const monthList = [
     "January",
     "February",
@@ -18,51 +18,51 @@ export default function AddTrack() {
     "November",
     "December",
   ];
-  console.log("Month=", month);
+
   return (
-    <>
-      <div className="text-center m-10 animate-pulse opacity-40">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 py-10">
+      <div className="text-center mb-6 animate-pulse opacity-50">
         <h1>Currently working on it...</h1>
       </div>
-      <div className="m-10 border-2 flex  p-10 justify-evenly">
-        <div className="border-3 rounded-md  flex justify-center p-1">
-          <h1 className="rotate-270 text-[0.7rem] font-semibold">
+
+      <div className="w-full max-w-3xl border rounded-xl bg-white shadow-sm flex flex-col md:flex-row items-center md:items-start gap-6 p-4">
+        {/* Date Badge */}
+        <div className="flex flex-row md:flex-col items-center gap-2 border-r md:border-r-0 md:border-b pr-4 md:pr-0 md:pb-4">
+          <h1 className="rotate-270 md:rotate-0  text-xs font-semibold tracking-wide text-gray-700">
             {monthList[month]}
           </h1>
-          <div className="flex flex-col  ">
-            <p className="text-red-600 font-semibold">{dayList[day]}</p>
-            <p className="text-black font-semibold text-3xl">{date}</p>
+          <div className="text-center">
+            <p className="text-red-500 font-semibold">{dayList[day]}</p>
+            <p className="text-black font-bold text-4xl leading-none">{date}</p>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <form className="flex gap-10" action="">
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>{" "}
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>{" "}
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>{" "}
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>{" "}
-            <div className="flex flex-col">
-              <label htmlFor="">Read a book</label>
-              <input type="checkbox" />
-            </div>
-          </form>
-        </div>
+
+        {/* Form */}
+        <form className="grid grid-cols-3 w-full gap-4">
+          {[
+            "Read a book",
+            "Workout",
+            "Meditate",
+            "Study",
+            "Practice coding",
+            "Sleep early",
+          ].map((habit, i) => (
+            <label key={i} className="flex items-center gap-3 text-sm">
+              <input type="checkbox" className="form-checkbox h-5 w-5" />
+              <span className="font-medium">{habit}</span>
+            </label>
+          ))}
+          <div className="col-span-full flex justify-center">
+            <button
+              type="submit"
+              className="bg-black text-white font-semibold rounded-xl py-2 transition
+            duration-200 hover:opacity-90 active:scale-95 w-full  mt-2"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
