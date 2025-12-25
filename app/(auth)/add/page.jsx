@@ -20,9 +20,11 @@ export default function AddTrack() {
   ];
 
   const habits = [
+    "Wake up early",
+    "Go to work",
     "Read a book",
+    "Eat healthy",
     "Workout",
-    "Meditate",
     "Study",
     "Practice coding",
     "Sleep early",
@@ -50,7 +52,13 @@ export default function AddTrack() {
         <form className="grid grid-cols-3 w-full gap-4">
           {habits.map((habit, i) => (
             <label key={i} className="flex items-center gap-3 text-sm">
-              <input type="checkbox" className="form-checkbox h-5 w-5" />
+              <input
+                id="red-checkbox"
+                type="checkbox"
+                value=""
+                className="w-4 h-4 border-default-medium rounded-xs focus:ring-purple-500 dark:focus:purple-red-600 ring-offset-neutral-primary focus:ring-2"
+              />
+
               <span className="font-medium">{habit}</span>
             </label>
           ))}
