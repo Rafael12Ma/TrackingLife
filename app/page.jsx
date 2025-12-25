@@ -1,11 +1,10 @@
 export default function HomePage() {
   return (
     <>
-      <div className="flex flex-col items-center gap-20 justify-center w-300 mx-auto py-10 border-black border-5 mt-10">
+      <div className="flex flex-col items-center gap-12 px-4 py-10 mx-auto w-full max-w-3xl">
         <h1 className="text-2xl font-bold mb-10">Questions</h1>
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               What is this app for ?
             </label>
@@ -15,9 +14,8 @@ export default function HomePage() {
             </h1>
           </div>
         </div>
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               How can I use it right?
             </label>
@@ -29,9 +27,8 @@ export default function HomePage() {
             </h1>
           </div>
         </div>
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               Should i create an account first?
             </label>
@@ -41,9 +38,8 @@ export default function HomePage() {
             </h1>
           </div>
         </div>{" "}
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               Should i create an account first?
             </label>
@@ -53,9 +49,8 @@ export default function HomePage() {
             </h1>
           </div>
         </div>{" "}
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               Should i create an account first?
             </label>
@@ -65,21 +60,8 @@ export default function HomePage() {
             </h1>
           </div>
         </div>{" "}
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
-            <label className="text-2xl font-semibold font-sans">
-              Should i create an account first?
-            </label>
-            <h1>
-              Yes. You must create an account. Dont worry it only lasts some
-              seconds and it's really simple.
-            </h1>
-          </div>
-        </div>{" "}
-        <div className="flex justify-start items-center w-full max-w-3xl gap-2">
-          <p className="bg-black w-2 h-2 rounded-2xl"></p>
-          <div className="border-black border-x-2 p-2 w-full">
+        <div className="flex items-start gap-3 w-full border-l-4 border-black bg-white p-4 rounded-md shadow-sm">
+          <div className="flex flex-col gap-1">
             <label className="text-2xl font-semibold font-sans">
               Should i create an account first?
             </label>
