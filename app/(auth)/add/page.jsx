@@ -59,7 +59,7 @@ export default function AddTrack() {
                 className="w-4 h-4 border-default-medium rounded-xs accent-red-500/25 focus:ring-red-500 dark:focus:purple-red-600 ring-offset-neutral-primary focus:ring-2"
               />
 
-              <span className="font-medium">{habit}</span>
+              <span className="font-semibold font-sans">{habit}</span>
             </label>
           ))}
           <div className="col-span-full flex justify-center">
