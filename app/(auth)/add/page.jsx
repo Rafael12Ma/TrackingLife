@@ -19,8 +19,17 @@ export default function AddTrack() {
     "December",
   ];
 
+  const habits = [
+    "Read a book",
+    "Workout",
+    "Meditate",
+    "Study",
+    "Practice coding",
+    "Sleep early",
+  ];
+
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 py-10">
+    <div className="w-full max-h-screen flex flex-col items-center justify-center bg-gray-50 py-20">
       <div className="text-center mb-6 animate-pulse opacity-50">
         <h1>Currently working on it...</h1>
       </div>
@@ -39,14 +48,7 @@ export default function AddTrack() {
 
         {/* Form */}
         <form className="grid grid-cols-3 w-full gap-4">
-          {[
-            "Read a book",
-            "Workout",
-            "Meditate",
-            "Study",
-            "Practice coding",
-            "Sleep early",
-          ].map((habit, i) => (
+          {habits.map((habit, i) => (
             <label key={i} className="flex items-center gap-3 text-sm">
               <input type="checkbox" className="form-checkbox h-5 w-5" />
               <span className="font-medium">{habit}</span>
