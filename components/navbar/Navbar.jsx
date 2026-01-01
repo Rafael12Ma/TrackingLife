@@ -14,7 +14,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <nav className="m-2 sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[596px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
+      <nav className="m-2 text-[1rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[610px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
         <Link href="/">
           <Image
             width={30}
@@ -58,7 +58,7 @@ export default function Navbar() {
             >
               Logout
             </button>
-            <div className="flex justify-center min-[596px]:hidden max-[596]:text-[0.8rem] items-center gap-1 text-white text-[1.1rem]">
+            <div className="flex flexcol justify-center min-[596px]:hidden max-[596]:text-[0.6rem] items-center gap-1 text-white ">
               <MdAccountBox />
               <p>{session?.user?.email}</p>
             </div>
@@ -66,7 +66,7 @@ export default function Navbar() {
         )}
 
         {session && (
-          <div className="flex justify-center text-[1rem] max-[596px]:hidden items-center gap-1 text-white ">
+          <div className="flex justify-center text-[0.6rem] sm:text-[0.8rem] md:text-[1rem] lg:text-[1rem] max-[596px]:hidden items-center gap-1 text-white ">
             <MdAccountBox />
             <p>{session?.user?.email}</p>
           </div>
