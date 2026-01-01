@@ -1,16 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import icon from "@/public/goodLife.jpg";
 import Image from "next/image";
+import { authClient } from "@/LIB/auth-client";
+import { MdAccountBox } from "react-icons/md";
 
 export default function Navbar() {
   const path = usePathname();
+  const { data: session } = authClient.useSession();
 
+  const router = useRouter();
   return (
     <>
-      <nav className="m-2 rounded-3xl flex p-5 justify-center items-center gap-10 text-gray-500 bg-black text-2xl font-serif font-semibold">
+      <nav className="m-2 sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[596px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
         <Link href="/">
           <Image
             width={30}
@@ -33,6 +37,40 @@ export default function Navbar() {
         >
           Tracks
         </Link>
+        {!session ? (
+          <Link
+            className={path === "/login" ? "text-[#EEEEEE]" : undefined}
+            href="/login"
+          >
+            Login
+          </Link>
+        ) : (
+          <div className="flex gap-5">
+            <button
+              className="cursor-pointer hover:scale-110 transition duration-700 hover:text-red-500"
+              onClick={() =>
+                authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => router.push("/login"),
+                  },
+                })
+              }
+            >
+              Logout
+            </button>
+            <div className="flex justify-center min-[596px]:hidden max-[596]:text-[0.8rem] items-center gap-1 text-white text-[1.1rem]">
+              <MdAccountBox />
+              <p>{session?.user?.email}</p>
+            </div>
+          </div>
+        )}
+
+        {session && (
+          <div className="flex justify-center text-[1rem] max-[596px]:hidden items-center gap-1 text-white ">
+            <MdAccountBox />
+            <p>{session?.user?.email}</p>
+          </div>
+        )}
       </nav>
     </>
   );
