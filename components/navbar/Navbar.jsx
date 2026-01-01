@@ -14,16 +14,15 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <nav className="m-2 text-[1rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[610px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
+      <nav className="m-2 text-[0.9rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[610px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
         <Link href="/">
-          <Image
-            width={30}
-            className={`rounded-b-lg opacity-40 ${
+          <img
+            className={`rounded-b-lg opacity-40 w-6 sm:w-8 md:w-10 lg:w-12  ${
               path === "/" ? "opacity-100" : undefined
             }`}
             alt="Good life"
-            src={icon}
-          ></Image>
+            src={icon.src}
+          ></img>
         </Link>
         <Link
           className={path === "/add" ? "text-[#EEEEEE]" : undefined}
