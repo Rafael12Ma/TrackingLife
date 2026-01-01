@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import icon from "@/public/goodLife.jpg";
 import Image from "next/image";
-import { authClient } from "@/LIB/auth-client";
+import { authClient } from "@/lib/auth-client";
 import { MdAccountBox } from "react-icons/md";
 
 export default function Navbar() {

@@ -1,7 +1,7 @@
 "use server";
 
-import { auth } from "@/LIB/auth";
-import { db } from "@/LIB/db";
+import { auth } from "@/lib/auth";
+import { db } from "@/lib/db";
 import { headers } from "next/headers";
 
 export async function createTracks(prev, formData) {
