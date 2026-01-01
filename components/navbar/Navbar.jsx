@@ -50,7 +50,9 @@ export default function Navbar() {
               onClick={() =>
                 authClient.signOut({
                   fetchOptions: {
-                    onSuccess: () => router.push("/login"),
+                    onSuccess: () => {
+                      router.push("/login");
+                    },
                   },
                 })
               }
@@ -59,7 +61,7 @@ export default function Navbar() {
             </button>
             <div className="flex flexcol justify-center min-[596px]:hidden max-[596]:text-[0.6rem] items-center gap-1 text-white ">
               <MdAccountBox />
-              <p>{session?.user?.email}</p>
+              <p className="text-green-500">{session?.user?.email}</p>
             </div>
           </div>
         )}
@@ -67,7 +69,7 @@ export default function Navbar() {
         {session && (
           <div className="flex justify-center text-[0.6rem] sm:text-[0.8rem] md:text-[1rem] lg:text-[1rem] max-[596px]:hidden items-center gap-1 text-white ">
             <MdAccountBox />
-            <p>{session?.user?.email}</p>
+            <p className="text-green-500">{session?.user?.email}</p>
           </div>
         )}
       </nav>

@@ -1,7 +1,7 @@
 export default function LoadingAuthPage() {
   return (
     <>
-      <p className="text-red-600">Loading page</p>
+      <p className="text-black text-center my-30">Loading...</p>
     </>
   );
 }

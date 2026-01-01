@@ -71,3 +71,15 @@ model Verification {
   @@index([identifier])
   @@map("verification")
 }
+
+
+model Track {
+  id          String   @id @default(uuid())
+  userEmail   String
+  habit       String
+  date        DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("tracks")
+}

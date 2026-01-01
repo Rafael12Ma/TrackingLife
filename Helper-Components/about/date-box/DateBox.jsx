@@ -33,3 +33,25 @@ export default function DateBox() {
     </>
   );
 }
+
+export function getDate() {
+  const now = new Date();
+  const month = now.getMonth()+1;
+  const year = now.getFullYear();
+  const date = now.getDate();
+  const monthList = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return { month, year, date };
+}

@@ -2,25 +2,12 @@
 
 import { useActionState } from "react";
 import Buttons from "./buttons";
+import { createTracks } from "@/actions/indx";
+import { habits } from "./habits";
 
 export default function Form() {
-  function test(prev, formData) {
-    const checkb = formData.getAll("habits");
-    console.log("checkbox=", checkb);
-  }
+  const [state, formAction] = useActionState(createTracks, {});
 
-  const { state, formAction } = useActionState(test, {});
-
-  const habits = [
-    "Wake up early",
-    "Go to work",
-    "Read a book",
-    "Eat healthy",
-    "Workout",
-    "Study",
-    "Practice coding",
-    "Sleep early",
-  ];
   return (
     <>
       <form action={formAction} className="grid grid-cols-3 w-full gap-4">

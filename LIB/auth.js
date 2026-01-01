@@ -27,19 +27,19 @@ export const auth = betterAuth({
     process.env.NEXT_PUBLIC_BASE_URL?.replace("https://", "http://")
   ],
   session: {
-    expiresIn: 5*60,
+    expiresIn: 60* 60,
     updateAge: 0,
     cookieCache: {
       enabled: true,
-      maxAge: 10*60
+      maxAge: 60 * 60
     }
   },
   advanced: {
-    cookiePrefix: "myapp",
+    cookiePrefix: "trackingRoutine",
     useSecureCookies: process.env.NODE_ENV === 'production',
     cookies: {
       session_token: {
-        name: "myapp_session_token",
+        name: "trackingRoutine_session_token",
         attributes: {
           sameSite: "lax"
         }
