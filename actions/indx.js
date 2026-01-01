@@ -1,7 +1,7 @@
 "use server";
 
 
-import { auth } from "@/lib/auth";
+import { auth } from "@/LIB/auth";
 import { db } from "@/lib/db";
 import { headers } from "next/headers";
 

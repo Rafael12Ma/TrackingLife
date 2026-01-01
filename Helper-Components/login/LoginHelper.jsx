@@ -1,6 +1,6 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/LIB/auth-client";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 

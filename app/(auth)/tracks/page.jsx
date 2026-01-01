@@ -1,7 +1,7 @@
 import { getTracks } from "@/actions/indx";
 import { getDate } from "@/Helper-Components/about/date-box/DateBox";
 import { habits } from "@/Helper-Components/about/form-submit/habits";
-import { auth } from "@/lib/auth";
+import { auth } from "@/LIB/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
