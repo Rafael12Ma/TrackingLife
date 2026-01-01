@@ -2,7 +2,7 @@
 
 
 import { auth } from "@/LIB/auth";
-import { db } from "@/lib/db";
+import { db } from "@/LIB/db";
 import { headers } from "next/headers";
 
 export async function createTracks(prev, formData) {
