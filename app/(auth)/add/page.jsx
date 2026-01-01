@@ -34,7 +34,7 @@ export default async function AddTrack() {
     contentSentData = (
       <div className="flex flex-col justify-center items-center gap-2">
         <h1 className="text-xl font-serif font-semibold">
-          Your data today ({fullDate}) has been sent successfully✅
+          Your data today ({fullDate}) has been sent successfully!✅
         </h1>
         <Link
           className="bg-black text-white p-1 font-serif hover:scale-110 transition duration-1000 animate-pulse rounded-lg"
