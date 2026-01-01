@@ -20,7 +20,7 @@ export default function LoginForm() {
   }
   return (
     <>
-      <div className="flex flex-col p-5 border-2 rounded-t-2xl sm:mx-30 md:mx-45 lg:mx-80 xl:mx-120 2xl:mx-145 3xl:mx-140 gap-4 my-20 mx-20 justify-center items-center">
+      <div className="flex flex-col p-5 border-2 rounded-t-2xl sm:mx-20 md:mx-45 lg:mx-80 xl:mx-120 2xl:mx-145 3xl:mx-140 gap-4 my-20 mx-20 justify-center items-center">
         <h1 className="font-bold text-xl">Log in</h1>
         <hr className="bg-amber-500 w-full opacity-20" />
         <div className="gap-10 flex">
