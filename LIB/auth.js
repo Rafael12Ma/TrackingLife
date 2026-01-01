@@ -27,7 +27,7 @@ export const auth = betterAuth({
     process.env.NEXT_PUBLIC_BASE_URL?.replace("https://", "http://")
   ],
   session: {
-    expiresIn: 60* 60,
+    expiresIn: 60 * 60,
     updateAge: 0,
     cookieCache: {
       enabled: true,
