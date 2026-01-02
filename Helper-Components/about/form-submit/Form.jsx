@@ -27,6 +27,7 @@ export default function Form() {
         <div className="col-span-full flex justify-center">
           <Buttons />
         </div>
+        <h1 className="w-100 opacity-70 animate-pulse">{state.message}</h1>{" "}
       </form>
     </>
   );

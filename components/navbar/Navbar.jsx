@@ -3,15 +3,18 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import icon from "@/public/goodLife.jpg";
-import Image from "next/image";
 import { authClient } from "@/LIB/auth-client";
 import { MdAccountBox } from "react-icons/md";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const path = usePathname();
-  const { data: session } = authClient.useSession();
-
+  const { data: session } = authClient.useSession({
+    refetchInterval: 10 * 1000, // every 1 minute
+  });
   const router = useRouter();
+
   return (
     <>
       <nav className="m-2 text-[0.9rem] sm:text-[1rem] md:text-[1.4rem] lg:text-[1.7rem] rounded-3xl max-[610px]:gap-5  flex p-5 justify-center items-center gap-10 text-gray-500 bg-black font-serif font-semibold">
@@ -51,7 +54,11 @@ export default function Navbar() {
                 authClient.signOut({
                   fetchOptions: {
                     onSuccess: () => {
+                      toast.success("Logged out successfully");
                       router.push("/login");
+                    },
+                    onError: () => {
+                      toast.error("Logout failed!");
                     },
                   },
                 })

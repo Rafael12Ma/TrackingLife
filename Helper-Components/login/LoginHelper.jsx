@@ -6,14 +6,14 @@ import { FaGoogle } from "react-icons/fa";
 
 export default function LoginForm() {
   async function handleGithubSignIn() {
-    const data = await authClient.signIn.social({
+    await authClient.signIn.social({
       provider: "github",
       callbackURL: "/add",
     });
   }
 
   async function handleGoogleSignIn() {
-    const data = await authClient.signIn.social({
+    await authClient.signIn.social({
       provider: "google",
       callbackURL: "/add",
     });
