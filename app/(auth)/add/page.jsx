@@ -19,8 +19,6 @@ export default async function AddTrack() {
   const { month, year, date } = getDate();
   const fullDate = date + "/" + month + "/" + year;
 
-  console.log("fulldate=", fullDate);
-
   let isSent = false;
   tracks.map((track) => {
     const datee = new Date(track.date).toLocaleDateString();
@@ -29,11 +27,12 @@ export default async function AddTrack() {
       return;
     }
   });
+  console.log("isSent=", isSent);
   let contentSentData;
   if (isSent) {
     contentSentData = (
-      <div className="flex flex-col justify-center items-center gap-2">
-        <h1 className="text-xl font-serif font-semibold">
+      <div className="flex flex-col justify-center items-center m-5 gap-2">
+        <h1 className="text-lg font-serif font-semibold">
           Your data today ({fullDate}) has been sent successfully!✅
         </h1>
         <Link
@@ -47,12 +46,12 @@ export default async function AddTrack() {
   }
 
   return (
-    <div className="w-full max-h-screen flex flex-col items-center justify-center bg-gray-50 py-20">
+    <div className=" max-h-screen flex flex-col items-center justify-center mx-auto bg-gray-50 py-20">
       <div className="text-center mb-6 animate-pulse opacity-50">
         {/* <h1>Currently working on it...</h1> */}
         Add your daily routine
       </div>
-      <div className="w-full  max-w-3xl border rounded-xl bg-white shadow-sm flex flex-col md:flex-row justify-center items-center md:items-start gap-6 p-4">
+      <div className="w-full max-w-3xl border rounded-xl bg-white shadow-sm flex flex-col md:flex-row justify-center items-center md:items-start gap-6 p-4">
         {isSent ? (
           contentSentData
         ) : (
