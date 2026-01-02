@@ -51,9 +51,7 @@ export default async function FullCalendar({ tracks }) {
               <div key={day}>
                 <li className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-lg">
                   <DateDisplay day={day} />
-                  <ColForm colTitle="Score">
-                    {tracks.length}/{habits.length}
-                  </ColForm>
+
                   <ul className="grid grid-cols-2 lg:grid-cols-3 list-decimal gap-4 border m-1 p-4 rounded-lg">
                     {tracks.map((track) => (
                       <li
@@ -72,7 +70,12 @@ export default async function FullCalendar({ tracks }) {
                       </li>
                     ))}
                   </ul>
-                  <ColForm colTitle="Completion">{completion}%</ColForm>
+                  <div>
+                    <ColForm colTitle="Score">
+                      {tracks.length}/{habits.length}
+                    </ColForm>
+                    <ColForm colTitle="Completion">{completion}%</ColForm>
+                  </div>
                 </li>
               </div>
             );
