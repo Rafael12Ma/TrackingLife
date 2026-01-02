@@ -49,7 +49,7 @@ export default async function FullCalendar({ tracks }) {
 
             return (
               <div key={day}>
-                <li className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-lg">
+                <li className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-2  my-2 p-4 rounded-lg">
                   <DateDisplay day={day} />
 
                   <ul className="grid grid-cols-2 lg:grid-cols-3 list-decimal gap-4 border m-1 p-4 rounded-lg">
@@ -81,6 +81,9 @@ export default async function FullCalendar({ tracks }) {
             );
           })}
         </ul>
+        <div className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-lg">
+          <h1>Average</h1>
+        </div>
       </div>
     </>
   );
