@@ -2,6 +2,7 @@ import { getDate } from "../about/date-box/DateBox";
 import DateDisplay from "../about/date-box/DateDisplay";
 import { habits } from "../about/form-submit/habits";
 import { CalculateColor } from "./calculateColor";
+import { MeanCompletion } from "./calculateCompletion";
 import ColForm from "./columns/colForm";
 
 export default async function FullCalendar({ tracks }) {
@@ -30,6 +31,8 @@ export default async function FullCalendar({ tracks }) {
     return acc;
   }, {});
   //
+  let complList = [];
+
   return (
     <>
       <div className="flex flex-col my-5 justify-center">
@@ -47,6 +50,7 @@ export default async function FullCalendar({ tracks }) {
             const completion = Math.round(
               (tracks.length / habits.length) * 100
             );
+            complList.push(completion);
             const color = CalculateColor(completion);
             return (
               <div key={day}>
@@ -57,14 +61,14 @@ export default async function FullCalendar({ tracks }) {
                     {tracks.map((track) => (
                       <li
                         key={track.id}
-                        className="text-green-500 text-[0.7rem]"
+                        className="text-green-500  text-[0.7rem]"
                       >
                         {track.habit}
                       </li>
                     ))}
                     {missingHabits.map((missingHabit) => (
                       <li
-                        className="text-red-500 line-through text-[0.7rem]"
+                        className="text-red-500  line-through text-[0.7rem]"
                         key={missingHabit}
                       >
                         {missingHabit}
@@ -84,8 +88,17 @@ export default async function FullCalendar({ tracks }) {
             );
           })}
         </ul>
-        <div className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
-          <h1>Average</h1>
+        <div className="flex justify-end items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
+          <h1 className="font-semibold">
+            Mean so far{" "}
+            <span
+              className={`${CalculateColor(
+                MeanCompletion(complList)
+              )} font-semibold font-sans`}
+            >
+              {MeanCompletion(complList)}
+            </span>
+          </h1>
         </div>
       </div>
     </>
