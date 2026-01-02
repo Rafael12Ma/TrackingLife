@@ -96,7 +96,7 @@ export default async function FullCalendar({ tracks }) {
                 MeanCompletion(complList)
               )} font-semibold font-sans`}
             >
-              {MeanCompletion(complList)}
+              {MeanCompletion(complList)}%
             </span>
           </h1>
         </div>
