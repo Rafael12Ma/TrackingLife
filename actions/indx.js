@@ -32,12 +32,14 @@ export async function createTracks(prev, formData) {
 
 
 export async function getTracks(email) {
-    const tracks = await db.track.findMany(
-        {
-            where: {
-                userEmail: email
-            }
+    const tracks = await db.track.findMany({
+        where: {
+            userEmail: email
+        },
+        orderBy: {
+            date: "asc"
         }
+    }
     );
     return tracks
 }
