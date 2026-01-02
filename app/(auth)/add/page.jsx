@@ -18,15 +18,18 @@ export default async function AddTrack() {
   const tracks = await getTracks(session.user.email);
   const { month, year, date } = getDate();
   const fullDate = date + "/" + month + "/" + year;
+  const todayISO = new Date().toISOString().split("T")[0];
 
-  let isSent = false;
-  tracks.map((track) => {
-    const datee = new Date(track.date).toLocaleDateString();
-    if (datee === fullDate) {
-      isSent = true;
-      return;
-    }
-  });
+  const isSent = tracks.some(
+    (track) => track.date.toISOString().split("T")[0] === todayISO
+  );
+  // tracks.map((track) => {
+  //   const datee = new Date(track.date).toLocaleDateString();
+  //   if (datee === fullDate) {
+  //     isSent = true;
+  //     return;
+  //   }
+  // });
   console.log("isSent=", isSent);
   let contentSentData;
   if (isSent) {
