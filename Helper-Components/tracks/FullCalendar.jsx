@@ -1,6 +1,7 @@
 import { getDate } from "../about/date-box/DateBox";
 import DateDisplay from "../about/date-box/DateDisplay";
 import { habits } from "../about/form-submit/habits";
+import { CalculateColor } from "./calculateColor";
 import ColForm from "./columns/colForm";
 
 export default async function FullCalendar({ tracks }) {
@@ -46,10 +47,10 @@ export default async function FullCalendar({ tracks }) {
             const completion = Math.round(
               (tracks.length / habits.length) * 100
             );
-
+            const color = CalculateColor(completion);
             return (
               <div key={day}>
-                <li className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-2  my-2 p-4 rounded-lg">
+                <li className="flex justify-between  items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-2  my-2 p-4 rounded-t-lg">
                   <DateDisplay day={day} />
 
                   <ul className="grid grid-cols-2 lg:grid-cols-3 list-decimal gap-4 border m-1 px-6 py-1 rounded-lg">
@@ -71,17 +72,19 @@ export default async function FullCalendar({ tracks }) {
                     ))}
                   </ul>
                   <div>
-                    <ColForm colTitle="Score">
+                    <ColForm color={color} colTitle="Score">
                       {tracks.length}/{habits.length}
                     </ColForm>
-                    <ColForm colTitle="Completion">{completion}%</ColForm>
+                    <ColForm color={color} colTitle="Completion">
+                      {completion}%
+                    </ColForm>
                   </div>
                 </li>
               </div>
             );
           })}
         </ul>
-        <div className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-lg">
+        <div className="flex justify-between items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
           <h1>Average</h1>
         </div>
       </div>
