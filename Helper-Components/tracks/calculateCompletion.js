@@ -5,6 +5,7 @@ export function MeanCompletion(complList) {
     for (let i = 0; i < c; i++) {
         sum += complList[i]
     }
-    const mean = sum / c
+    let mean = sum / c
+    mean = mean.toFixed(2)
     return mean
 }
