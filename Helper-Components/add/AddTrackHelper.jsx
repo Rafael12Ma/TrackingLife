@@ -5,10 +5,7 @@ import { getTracks } from "@/actions/indx";
 
 export default async function AddTrackHelper({ session }) {
   const tracks = await getTracks(session.user.email);
-  const { month, year, date } = getDate();
-  const fullDate = date + "/" + month + "/" + year;
   const todayISO = new Date().toISOString().split("T")[0];
-
   const isSent = tracks.some(
     (track) => track.date.toISOString().split("T")[0] === todayISO
   );
@@ -17,7 +14,7 @@ export default async function AddTrackHelper({ session }) {
     contentSentData = (
       <div className="flex flex-col justify-center items-center m-5 gap-2">
         <h1 className="text-lg font-serif font-semibold">
-          Your data today ({fullDate}) has been sent successfully!✅
+          Your data today has been sent successfully!✅
         </h1>
         <Link
           className="bg-black text-white p-1 font-serif hover:scale-110 transition duration-1000 animate-pulse rounded-lg"
