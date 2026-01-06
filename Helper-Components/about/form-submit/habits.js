@@ -5,4 +5,7 @@ export const habits = [
     "Workout",
     "Study",
     "Sleep early",
+    "Cold Shower",
+    "Social M. Detox",
+    "No alcohol"
 ];
