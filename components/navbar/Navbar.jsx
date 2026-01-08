@@ -5,7 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import icon from "@/public/goodLife.jpg";
 import { authClient } from "@/LIB/auth-client";
 import { MdAccountBox } from "react-icons/md";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 export default function Navbar() {
