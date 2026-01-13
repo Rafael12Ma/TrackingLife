@@ -1,7 +1,8 @@
+import ProgressBarComponent from "@/components/progressbar/ProgressBar";
 import { getDate } from "../about/date-box/DateBox";
 import DateDisplay from "../about/date-box/DateDisplay";
 import { habits } from "../about/form-submit/habits";
-import { CalculateColor } from "./calculateColor";
+import { CalculateColor, CalculateColorCss } from "./calculateColor";
 import { MeanCompletion } from "./calculateCompletion";
 import ColForm from "./columns/colForm";
 
@@ -91,13 +92,14 @@ export default async function FullCalendar({ tracks }) {
         <div className="flex justify-end items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
           <h1 className="font-semibold">
             Mean so far{" "}
-            <span
+            {/* <span
               className={`${CalculateColor(
                 MeanCompletion(complList)
               )} font-semibold font-sans`}
             >
               {MeanCompletion(complList)}%
-            </span>
+            </span> */}
+            <ProgressBarComponent score={complList} />
           </h1>
         </div>
       </div>
