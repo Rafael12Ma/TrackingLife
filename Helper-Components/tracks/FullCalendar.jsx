@@ -81,7 +81,7 @@ export default async function FullCalendar({ tracks }) {
                       {tracks.length}/{habits.length}
                     </ColForm>
                     <ColForm color={color} colTitle="Completion">
-                      {completion}%
+                      <ProgressBarComponent score={completion} />
                     </ColForm>
                   </div>
                 </li>
@@ -89,8 +89,8 @@ export default async function FullCalendar({ tracks }) {
             );
           })}
         </ul>
-        <div className="flex justify-end items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
-          <h1 className="font-semibold">
+        <div className="flex justify-center items-center border mx-5 sm:mx-15 md:mx-30 lg:mx-50 xl:mx-60 2xl:mx-100 px-4 gap-5  my-2 p-4 rounded-b-lg">
+          <h1 className="font-semibold text-right">
             Mean so far{" "}
             {/* <span
               className={`${CalculateColor(
@@ -99,7 +99,9 @@ export default async function FullCalendar({ tracks }) {
             >
               {MeanCompletion(complList)}%
             </span> */}
-            <ProgressBarComponent score={complList} />
+            <div className="">
+              <ProgressBarComponent score={complList} />
+            </div>
           </h1>
         </div>
       </div>

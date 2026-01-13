@@ -7,5 +7,6 @@ export function MeanCompletion(complList) {
     }
     let mean = sum / c
     mean = mean.toFixed(2)
+    console.log('mean=', c)
     return mean
 }
